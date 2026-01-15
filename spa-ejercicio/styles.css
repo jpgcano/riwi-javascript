@@ -1,11 +1,19 @@
 body{
     font-family: Arial, sans-serif;
     text-align: center;
+    padding: 15px;
 }
 
-nav button{
+nav a{
     margin: 5px;
     padding: 10px 15px;
-    cursor: pointer;
+    cursor: pointer;    
+    border: 1px solid black;
 
+}
+ button{    
+    margin: 5px;
+    padding: 10px 15px;
+    cursor: pointer;    
+    border: 1px solid black;
 }
