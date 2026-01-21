@@ -1,6 +1,34 @@
-import {Dashboard} from '../views/Dashboard.js';
-import {render} from '../core/render.js';
+import { render } from '../core/render.js';
+import { Dashboard } from '../views/Dashboard.js';
+import { projects } from '../views/Projects.js';
+import { ProjectDetail } from '../views/ProjectDetail.js';
 
-export function router(){
-    render(Dashboard());
+export async function router() {
+  const hash = location.hash || '#/dashboard';
+  const [, route, param] = hash.split('/');
+
+  let view = '<p>Cargando...</p>';
+
+  try {
+    switch (route) {
+      case 'dashboard':
+        view = Dashboard();
+        break;
+
+      case 'projects':
+        if (param) {
+          view = ProjectDetail(param);
+        } else {
+          view = await projects();
+        }
+        break;
+
+      default:
+        view = Dashboard();
+    }
+  } catch (error) {
+    view = `<p>Error inesperado: ${error.message}</p>`;
+  }
+
+  render(view);
 }
