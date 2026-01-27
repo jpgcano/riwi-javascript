@@ -1,0 +1,11 @@
+{
+  "users": [
+    { "email": "admin@govtech.com", "password": "123", "name": "Admin" },
+    { "email": "user@govtech.com", "password": "abc", "name": "Usuario" }
+  ],
+  "projects": [
+    { "id": 1, "name": "Planta Solar Norte", "lat": 4.5, "lon": -74.0 },
+    { "id": 2, "name": "Reserva Forestal", "lat": 6.2, "lon": -75.5 },
+    { "id": 3, "name": "Sensor Calidad Aire", "lat": 3.4, "lon": -76.5 }
+  ]
+}
